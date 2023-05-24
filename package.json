@@ -6,10 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "border gradient"
+  ],
   "author": "Frozn <frozndiscord@gmail.com>",
-  "repository": {},
-  "license": "ISC",
+  "repository": "https://github.com/Frozn0014/tailwind-border-gradients.git",
+  "license": "GPL-3.0",
   "devDependencies": {
     "tailwindcss": "^3.3.2"
   }
