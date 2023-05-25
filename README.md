@@ -57,3 +57,19 @@ In this case, to create a border gradient using your custom colors, you would us
 ```
 
 ---
+
+## Tips
+
+### Gradient Underlines
+
+To create a gradient underline on some text, use a gradient border only on the bottom.
+
+```html
+<h1 class="border-b-2 border-gradient-to-r from-red-500 to-blue-500">This text is underlined with a red-to-blue gradient!</h1>
+```
+
+To underline only a segment of the text, wrap the word in `<span>` tags and add the above classes to that element. The following code underlines only the word "underlined".
+
+```html
+<h1>This text is <span class="border-b-2 border-gradient-to-r from-red-500 to-blue-500">underlined</span> with a red-to-blue gradient!</h1>
+```
