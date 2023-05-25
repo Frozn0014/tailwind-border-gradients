@@ -1,6 +1,6 @@
 {
   "name": "tailwind-border-gradients",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Tailwind CSS plugin for adding gradients to borders.",
   "main": "plugin.js",
   "scripts": {
