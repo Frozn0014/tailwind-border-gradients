@@ -2,8 +2,8 @@ const plugin = require('tailwindcss/plugin');
 
 const borderGradient = plugin(
   function ({ addUtilities, theme, e }) {
-    const values = theme('direction');
-    const utilities = Object.entries(values).map(([key, value]) => {
+    const linearDirections = theme('linearDirections');
+    const linearUtilities = Object.entries(linearDirections).map(([key, value]) => {
       return {
         [`.${e(`border-gradient-to-${key}`)}`]: {
           borderImage: `linear-gradient(${value}, var(--tw-gradient-stops)) 10`
@@ -11,11 +11,20 @@ const borderGradient = plugin(
       };
     });
 
-    addUtilities(utilities);
+    const radialShapes = theme('radialShapes');
+    const radialUtilities = Object.entries(radialShapes).map(([key, value]) => {
+      return {
+        [`.${e(`border-radial-${key}`)}`]: {
+          borderImage: `radial-gradient(${value} at center, var(--tw-gradient-stops)) 10`
+        }
+      };
+    });
+
+    addUtilities([linearUtilities, radialUtilities]);
   },
   {
     theme: {
-      direction: {
+      linearDirections: {
         r: 'to right',
         l: 'to left',
         t: 'to top',
@@ -24,6 +33,10 @@ const borderGradient = plugin(
         tl: 'to top left',
         br: 'to bottom right',
         bl: 'to bottom left'
+      },
+      radialShapes: {
+        circle: 'circle',
+        ellipse: 'ellipse'
       }
     }
   }
